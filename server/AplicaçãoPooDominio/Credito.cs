@@ -9,10 +9,17 @@ namespace AplicaçãoPoo.Dominio
 {
     public class Credito
     {
-        Pagamento pagamento { get; set }
+        Pagamento pagamento { get; set; }
 
-        int  { get;set; }
+        int Parcelas { get; set; }
 
-        float { get; set;}
+        float Juros{ get; set;}
+
+        public double CreditarValor(double saldo,double credito)
+        {
+            var resultado = saldo = credito;
+            return resultado;   
+        }
+
     }
 }

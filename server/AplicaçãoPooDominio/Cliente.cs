@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace AplicaçãoPoo.Dominio
 {
+   //Criar um novo formulario frmCliente
+   //Adicionar 4 texBox e 4 Label para
+   //Nome, cpf, Valor de debito, Valor de credito
     public class Cliente
     {
-        string  Nome { get; set;}
+        public string? Nome { get; set;}
 
-        string Cpf { get; set;}
-        Debito Debito { get; set; }
-        Credito Credito { get; set; }
+        public double SaldoInicial { get; set;}
+        public string txtcpf { get; set;}
+        public Debito Debito { get; set;}
+        public  Credito Credito { get; set;}
 
     }
 }

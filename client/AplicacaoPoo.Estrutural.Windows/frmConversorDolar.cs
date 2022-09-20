@@ -10,18 +10,23 @@ using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows
 {
+    
     public partial class frmConversorDolar : Form
     {
+        private bool cotacaoEhValido;
+        private bool ValorEmDolarEhvalido;
+        private object btnConverterDolarEmReal;
+
         public frmConversorDolar()
         {
             InitializeComponent();
-            btnConverterDolarEmReal.Enabled = false;
+            txtCotacaodolar.Enabled = false;
         }
 
         private void btnConverterDolarEmReal_Click(object sender, EventArgs e)
         {
-            var cotacaoDolar = decimal.Parse(btnConverterDolarEmReal.Text);
-            var valorEmdolar = decimal.Parse(btnConverterDolarEmReal.Text);
+            var cotacaoDolar = decimal.Parse(txtCotacaoDolar.Text);
+            var valorEmdolar = decimal.Parse(txtCotacaoDolar.Text);
             var valorconvertido = cotacaoDolar * valorEmdolar;
 
             MessageBox.Show(valorconvertido.ToString(), "deu certo");                                                                    
@@ -33,29 +38,44 @@ namespace AplicacaoPoo.Estrutural.Windows
             try
             {
                 var resultado = decimal.Parse (txtCotacaoDolar.Text);
+                cotacaoEhValido = true;
+                if (ValorEmDolarEhvalido && cotacaoEhValido) 
+                {
+                    txtCotacaodolar.Enabled = true;  
+                }
+              
             }
             catch (Exception)
             {
                 MessageBox.Show("Digite um Valor Número");
                 txtCotacaoDolar.Focus();
-                throw;
+                cotacaoEhValido = false;
+                btnConverterDolarEmReal = false;
             }
         }
 
         private void txtValorEmDolar_TextChanged(object sender, EventArgs e)
         {
-            
-                try
+
+            try
+            {
+                var resultado = decimal.Parse(txtCotacaoDolar.Text);
+                ValorEmDolarEhvalido = true;
+                if (ValorEmDolarEhvalido && cotacaoEhValido)
                 {
-                    var resultado = decimal.Parse(txtCotacaoDolar.Text);
+                    txtCotacaodolar.Enabled = true;
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Digite um Valor Número");
-                    txtValorEmDolar.Focus();
-                    throw;
-                }
-            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Digite um Valor Número");
+                txtValorEmDolar.Focus();
+                ValorEmDolarEhvalido = false;
+                btnConverterDolarEmReal = false;
+
+
+            }
+
 
         }
     }

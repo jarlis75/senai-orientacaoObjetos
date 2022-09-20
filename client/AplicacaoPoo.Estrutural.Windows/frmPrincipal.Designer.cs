@@ -40,6 +40,7 @@
             this.btnAbrirFormConversaoMoeda.TabIndex = 0;
             this.btnAbrirFormConversaoMoeda.Text = "CONVERSOR DE MOEDA";
             this.btnAbrirFormConversaoMoeda.UseVisualStyleBackColor = true;
+            this.btnAbrirFormConversaoMoeda.Click += new System.EventHandler(this.btnAbrirFormConversaoMoeda_Click);
             // 
             // btnAbrirFormComissionamento
             // 
@@ -49,6 +50,7 @@
             this.btnAbrirFormComissionamento.TabIndex = 1;
             this.btnAbrirFormComissionamento.Text = "COMISSIONAMENTO";
             this.btnAbrirFormComissionamento.UseVisualStyleBackColor = true;
+            this.btnAbrirFormComissionamento.Click += new System.EventHandler(this.btnAbrirFormComissionamento_Click);
             // 
             // frmPrincipal
             // 

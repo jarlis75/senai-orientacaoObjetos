@@ -15,6 +15,48 @@ namespace AplicacaoPoo.Estrutural.Windows
         public frmConversorDolar()
         {
             InitializeComponent();
+            btnConverterDolarEmReal.Enabled = false;
+        }
+
+        private void btnConverterDolarEmReal_Click(object sender, EventArgs e)
+        {
+            var cotacaoDolar = decimal.Parse(btnConverterDolarEmReal.Text);
+            var valorEmdolar = decimal.Parse(btnConverterDolarEmReal.Text);
+            var valorconvertido = cotacaoDolar * valorEmdolar;
+
+            MessageBox.Show(valorconvertido.ToString(), "deu certo");                                                                    
+
+        }
+
+        private void txtCotacaoDolar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var resultado = decimal.Parse (txtCotacaoDolar.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Digite um Valor Número");
+                txtCotacaoDolar.Focus();
+                throw;
+            }
+        }
+
+        private void txtValorEmDolar_TextChanged(object sender, EventArgs e)
+        {
+            
+                try
+                {
+                    var resultado = decimal.Parse(txtCotacaoDolar.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Digite um Valor Número");
+                    txtValorEmDolar.Focus();
+                    throw;
+                }
+            
+
         }
     }
 }

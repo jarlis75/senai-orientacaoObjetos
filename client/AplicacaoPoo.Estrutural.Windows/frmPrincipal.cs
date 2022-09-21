@@ -1,3 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace AplicacaoPoo.Estrutural.Windows
 {
     public partial class frmPrincipal : Form
@@ -7,9 +17,9 @@ namespace AplicacaoPoo.Estrutural.Windows
             InitializeComponent();
         }
 
-        private void btnAbrirFormConversaoMoeda_Click(object sender, EventArgs e)
+        private void btnAbrirFormConversorMoedas_Click(object sender, EventArgs e)
         {
-            var form = new frmConversorDolar();
+            var form = new frmConversorMoeda();
             form.Show();
         }
 

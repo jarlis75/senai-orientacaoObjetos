@@ -1,23 +1,20 @@
-﻿using AplicaçãoPooDominio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AplicaçãoPoo.Dominio
+namespace AplicacaoPoo.Dominio
 {
     public class Debito
     {
-        Pagamento Pagamento { get; set; } 
-        
+        Pagamento Pagamento { get; set; }
         double Desconto { get; set; }
 
         public double DebitarValor(double saldo, double desconto)
-        { 
-            var resultado = desconto;
-            return resultado;   
+        {
+            var resultado = saldo - desconto;
+            return resultado;
         }
-
     }
 }

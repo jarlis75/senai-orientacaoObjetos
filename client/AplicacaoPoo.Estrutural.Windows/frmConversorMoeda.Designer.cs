@@ -1,6 +1,6 @@
 ﻿namespace AplicacaoPoo.Estrutural.Windows
 {
-    partial class frmConversorDolar
+    partial class frmConversorMoeda
     {
         /// <summary>
         /// Required designer variable.
@@ -30,47 +30,47 @@
         {
             this.txtCotacaoDolar = new System.Windows.Forms.TextBox();
             this.txtValorEmDolar = new System.Windows.Forms.TextBox();
-            this.txtCotacaodolar = new System.Windows.Forms.Button();
+            this.btnConverterEmReal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCotacaoDolar
             // 
-            this.txtCotacaoDolar.Location = new System.Drawing.Point(80, 56);
+            this.txtCotacaoDolar.Location = new System.Drawing.Point(33, 29);
             this.txtCotacaoDolar.Name = "txtCotacaoDolar";
-            this.txtCotacaoDolar.PlaceholderText = "cotação dolar";
-            this.txtCotacaoDolar.Size = new System.Drawing.Size(229, 23);
+            this.txtCotacaoDolar.PlaceholderText = "cotação do dolar";
+            this.txtCotacaoDolar.Size = new System.Drawing.Size(150, 23);
             this.txtCotacaoDolar.TabIndex = 0;
             this.txtCotacaoDolar.TextChanged += new System.EventHandler(this.txtCotacaoDolar_TextChanged);
             // 
             // txtValorEmDolar
             // 
-            this.txtValorEmDolar.Location = new System.Drawing.Point(80, 116);
+            this.txtValorEmDolar.Location = new System.Drawing.Point(34, 77);
             this.txtValorEmDolar.Name = "txtValorEmDolar";
-            this.txtValorEmDolar.PlaceholderText = "valor em dolar";
-            this.txtValorEmDolar.Size = new System.Drawing.Size(222, 23);
+            this.txtValorEmDolar.PlaceholderText = "informe o valor em dolar";
+            this.txtValorEmDolar.Size = new System.Drawing.Size(155, 23);
             this.txtValorEmDolar.TabIndex = 1;
             this.txtValorEmDolar.TextChanged += new System.EventHandler(this.txtValorEmDolar_TextChanged);
             // 
-            // btnConverterDolarEmReal
+            // btnConverterEmReal
             // 
-            this.txtCotacaodolar.Location = new System.Drawing.Point(97, 234);
-            this.txtCotacaodolar.Name = "btnConverterDolarEmReal";
-            this.txtCotacaodolar.Size = new System.Drawing.Size(147, 23);
-            this.txtCotacaodolar.TabIndex = 2;
-            this.txtCotacaodolar.Text = "Converter Em reais";
-            this.txtCotacaodolar.UseVisualStyleBackColor = true;
-            this.txtCotacaodolar.Click += new System.EventHandler(this.btnConverterDolarEmReal_Click);
+            this.btnConverterEmReal.Location = new System.Drawing.Point(33, 121);
+            this.btnConverterEmReal.Name = "btnConverterEmReal";
+            this.btnConverterEmReal.Size = new System.Drawing.Size(123, 23);
+            this.btnConverterEmReal.TabIndex = 2;
+            this.btnConverterEmReal.Text = "Converter em Reais";
+            this.btnConverterEmReal.UseVisualStyleBackColor = true;
+            this.btnConverterEmReal.Click += new System.EventHandler(this.btnConverterEmReal_Click);
             // 
-            // frmConversorDolar
+            // frmConversorMoeda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtCotacaodolar);
+            this.ClientSize = new System.Drawing.Size(286, 171);
+            this.Controls.Add(this.btnConverterEmReal);
             this.Controls.Add(this.txtValorEmDolar);
             this.Controls.Add(this.txtCotacaoDolar);
-            this.Name = "frmConversorDolar";
-            this.Text = "frmConversorDolar";
+            this.Name = "frmConversorMoeda";
+            this.Text = "frmConversorMoeda";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,6 +80,6 @@
 
         private TextBox txtCotacaoDolar;
         private TextBox txtValorEmDolar;
-        private Button txtCotacaodolar;
+        private Button btnConverterEmReal;
     }
 }

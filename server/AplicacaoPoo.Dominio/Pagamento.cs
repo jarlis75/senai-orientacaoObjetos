@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AplicaçãoPooDominio
+namespace AplicacaoPoo.Dominio
 {
     public class Pagamento
     {
-       public double Valor { get; set; }
+        double Valor { get; set; }
     }
 }

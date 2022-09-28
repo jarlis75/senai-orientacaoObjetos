@@ -8,28 +8,28 @@ namespace AplicacaoPoo.Dominio.services
 {
     //static class c#
     //partial class c#
-    //abstract  class c#
-    public class ConverterMoedaServices
+    //abstract class c#
+
+    //Exemplo usando classes instanciadas
+    public class ConverterMoedaService
     {
         decimal CotacaoDolar = 5.25m;
         decimal CotacaoLibra = 6.15m;
-        decimal CotacaoEuro = 6.0m;
+        decimal CotacaoEuro  = 6.0m;
 
         public decimal ConverterDolarEmReal(decimal valor)
         {
-
             return valor * CotacaoDolar;
         }
 
-        public decimal CotacaoLibraEmReal(decimal valor)
+        public decimal ConverterLibraEmReal(decimal valor)
         {
-            return valor * CotacaoLibra; 
+            return valor * CotacaoLibra;
         }
 
-        public decimal CotacaoEuroEmReal(decimal valor)
+        public decimal ConverterEuroEmReal(decimal valor)
         {
-            return valor * CotacaoEuro;   
+            return valor * CotacaoEuro;
         }
-
     }
 }

@@ -29,63 +29,72 @@
         private void InitializeComponent()
         {
             this.txtValorEmDolar = new System.Windows.Forms.TextBox();
-            this.lblprimeiroValor = new System.Windows.Forms.Label();
-            this.lblsegundoValor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblPrimeiroValor = new System.Windows.Forms.Label();
+            this.lblSegundoValor = new System.Windows.Forms.Label();
+            this.cmbMoedas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtValorEmDolar
             // 
-            this.txtValorEmDolar.BackColor = System.Drawing.Color.Gray;
-            this.txtValorEmDolar.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtValorEmDolar.Location = new System.Drawing.Point(69, 119);
+            this.txtValorEmDolar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtValorEmDolar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorEmDolar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtValorEmDolar.ForeColor = System.Drawing.Color.Yellow;
+            this.txtValorEmDolar.Location = new System.Drawing.Point(34, 99);
+            this.txtValorEmDolar.Margin = new System.Windows.Forms.Padding(5);
             this.txtValorEmDolar.Name = "txtValorEmDolar";
-            this.txtValorEmDolar.Size = new System.Drawing.Size(208, 23);
+            this.txtValorEmDolar.PlaceholderText = "valor";
+            this.txtValorEmDolar.Size = new System.Drawing.Size(117, 32);
             this.txtValorEmDolar.TabIndex = 1;
-            this.txtValorEmDolar.Text = "informe o valor";
             this.txtValorEmDolar.TextChanged += new System.EventHandler(this.txtValorEmDolar_TextChanged);
             // 
-            // lblprimeiroValor
+            // lblPrimeiroValor
             // 
-            this.lblprimeiroValor.AutoSize = true;
-            this.lblprimeiroValor.BackColor = System.Drawing.SystemColors.InfoText;
-            this.lblprimeiroValor.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lblprimeiroValor.Location = new System.Drawing.Point(69, 9);
-            this.lblprimeiroValor.Name = "lblprimeiroValor";
-            this.lblprimeiroValor.Size = new System.Drawing.Size(0, 15);
-            this.lblprimeiroValor.TabIndex = 3;
+            this.lblPrimeiroValor.AutoSize = true;
+            this.lblPrimeiroValor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrimeiroValor.ForeColor = System.Drawing.Color.White;
+            this.lblPrimeiroValor.Location = new System.Drawing.Point(30, 24);
+            this.lblPrimeiroValor.Name = "lblPrimeiroValor";
+            this.lblPrimeiroValor.Size = new System.Drawing.Size(165, 19);
+            this.lblPrimeiroValor.TabIndex = 3;
+            this.lblPrimeiroValor.Text = "1 Dólar americano igual a";
             // 
-            // lblsegundoValor
+            // lblSegundoValor
             // 
-            this.lblsegundoValor.AutoSize = true;
-            this.lblsegundoValor.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblsegundoValor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblsegundoValor.Location = new System.Drawing.Point(69, 34);
-            this.lblsegundoValor.Name = "lblsegundoValor";
-            this.lblsegundoValor.Size = new System.Drawing.Size(0, 30);
-            this.lblsegundoValor.TabIndex = 4;
+            this.lblSegundoValor.AutoSize = true;
+            this.lblSegundoValor.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSegundoValor.ForeColor = System.Drawing.Color.White;
+            this.lblSegundoValor.Location = new System.Drawing.Point(30, 53);
+            this.lblSegundoValor.Name = "lblSegundoValor";
+            this.lblSegundoValor.Size = new System.Drawing.Size(236, 30);
+            this.lblSegundoValor.TabIndex = 4;
+            this.lblSegundoValor.Text = "614,11 Real brasileiro";
             // 
-            // comboBox1
+            // cmbMoedas
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Dolar",
-            "Euro",
-            "Libra Esterlina"});
-            this.comboBox1.Location = new System.Drawing.Point(69, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(208, 23);
-            this.comboBox1.TabIndex = 5;
+            this.cmbMoedas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbMoedas.DropDownHeight = 80;
+            this.cmbMoedas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMoedas.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbMoedas.ForeColor = System.Drawing.Color.Yellow;
+            this.cmbMoedas.FormattingEnabled = true;
+            this.cmbMoedas.IntegralHeight = false;
+            this.cmbMoedas.ItemHeight = 25;
+            this.cmbMoedas.Location = new System.Drawing.Point(159, 99);
+            this.cmbMoedas.Name = "cmbMoedas";
+            this.cmbMoedas.Size = new System.Drawing.Size(189, 33);
+            this.cmbMoedas.TabIndex = 5;
+            this.cmbMoedas.SelectedIndexChanged += new System.EventHandler(this.cmbMoedas_SelectedIndexChanged);
             // 
             // frmConversorMoeda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(376, 178);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.lblsegundoValor);
-            this.Controls.Add(this.lblprimeiroValor);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(376, 198);
+            this.Controls.Add(this.cmbMoedas);
+            this.Controls.Add(this.lblSegundoValor);
+            this.Controls.Add(this.lblPrimeiroValor);
             this.Controls.Add(this.txtValorEmDolar);
             this.Name = "frmConversorMoeda";
             this.Text = "frmConversorMoeda";
@@ -96,8 +105,8 @@
 
         #endregion
         private TextBox txtValorEmDolar;
-        private Label lblprimeiroValor;
-        private Label lblsegundoValor;
-        private ComboBox comboBox1;
+        private Label lblPrimeiroValor;
+        private Label lblSegundoValor;
+        private ComboBox cmbMoedas;
     }
 }

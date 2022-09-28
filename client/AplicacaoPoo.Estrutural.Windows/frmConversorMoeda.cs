@@ -1,61 +1,102 @@
-﻿using AplicacaoPoo.Dominio.helpers;
+﻿using AplicacaoPoo.Dominio.Helpers;
 using AplicacaoPoo.Dominio.services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace AplicacaoPoo.Estrutural.Windows
 {
     public partial class frmConversorMoeda : Form
     {
-       
+        public object Private { get; private set; }
+
         public frmConversorMoeda()
         {
             InitializeComponent();
-            
-            lblprimeiroValor.Text = $"1 {MoedaHelper.Dolar} igual a";
-            lblsegundoValor.Text = $"5,12 {MoedaHelper.Real}";
+            lblPrimeiroValor.Text = $"1 {MoedaHelper.Dolar} igual a";
+            lblSegundoValor.Text = $"5,12 {MoedaHelper.Real}";
+            txtValorEmDolar.Text = "1";
+
+            //Coloca os valores da nossa classe dentro do combobox.
+            var list = new List<string>();
+            list.Add(MoedaHelper.Dolar);
+            list.Add(MoedaHelper.Euro);
+            list.Add(MoedaHelper.Libra);
+            cmbMoedas.DataSource = list;
+            cmbMoedas.SelectedIndex = 0;
+        }
+
+        private void txtValorEmDolar_TextChanged(object sender, EventArgs e) 
+        {
+            if(txtValorEmDolar.Text == "")
+            {
+                cmbMoedas.Enabled = false;  
+                return;
+            }
+            cmbMoedas.Enabled = true;
+            EfetuarConversaoMoeda();
 
         }
 
 
-        private void txtValorEmDolar_TextChanged(object sender, EventArgs e)
+
+        private void cmbMoedas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EfetuarConversaoMoeda();
+        }
+
+        private void EfetuarConversaoMoeda()
         {
             try
             {
-                if(txtValorEmDolar.Text == "")
-                {
-                    return; 
-                }
-                
+                #region calculo da conversão
+                //Atalho para comentar código CTRL + K + C
+                //Atalho para descomentar o código CTRL + K + U
+                if (txtValorEmDolar.Text == "") return;
+
                 var valorEmDolar = decimal.Parse(txtValorEmDolar.Text);
-                var Moeda = new ConverterMoedaServices();
-                var resultado = Moeda.ConverterDolarEmReal(valorEmDolar);
-                lblprimeiroValor.Text = $"{valorEmDolar} {MoedaHelper.Dolar} igual a";
-                lblsegundoValor.Text = $"{resultado} {MoedaHelper.Real}";
+                var moedaService = new ConverterMoedaService();
+                switch (cmbMoedas.SelectedValue)
+                {
+                    case MoedaHelper.Dolar:
+                        {
+                            var valorConvertido =
+                                moedaService.ConverterDolarEmReal(valorEmDolar);
+                            lblPrimeiroValor.Text = $"{valorEmDolar} {MoedaHelper.Dolar} igual a";
+                            lblSegundoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                            break;
+                        }
+                    case MoedaHelper.Euro:
+                        {
+                            var valorConvertido =
+                                moedaService.ConverterEuroEmReal(valorEmDolar);
+                            lblPrimeiroValor.Text = $"{valorEmDolar} {MoedaHelper.Euro} igual a";
+                            lblSegundoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                            break;
+                        }
+                    case MoedaHelper.Libra:
+                        {
+                            var valorConvertido =
+                                moedaService.ConverterLibraEmReal(valorEmDolar);
+                            lblPrimeiroValor.Text = $"{valorEmDolar} {MoedaHelper.Libra} igual a";
+                            lblSegundoValor.Text = $"{valorConvertido} {MoedaHelper.Real}";
+
+                            break;
+                        }
+                }
+
+                #endregion calculo da conversão
             }
-
-
             catch (Exception)
             {
-                MessageBox.Show("A cotação do dolar é um valor decimal");
+                MessageBox.Show("Você precisa informar o valor Númerico");
+                txtValorEmDolar.Text = String.Empty;
                 txtValorEmDolar.Focus();
 
-              
-
+                throw;
             }
         }
-
-      
-    }    
+    }
 }
 
-        
-    
 

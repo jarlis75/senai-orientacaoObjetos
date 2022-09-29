@@ -46,7 +46,7 @@
             this.txtValorEmDolar.PlaceholderText = "valor";
             this.txtValorEmDolar.Size = new System.Drawing.Size(117, 32);
             this.txtValorEmDolar.TabIndex = 1;
-            this.txtValorEmDolar.TextChanged += new System.EventHandler(this.txtValorEmDolar_TextChanged);
+            this.txtValorEmDolar.TextChanged += new System.EventHandler(this.cmbMoedas_SelectedIndexChanged);
             // 
             // lblPrimeiroValor
             // 

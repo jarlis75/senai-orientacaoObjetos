@@ -31,11 +31,11 @@
             this.cmbComissionado = new System.Windows.Forms.ComboBox();
             this.txtPrecoUnitarioDaPeca = new System.Windows.Forms.TextBox();
             this.txtQuantidadevendida = new System.Windows.Forms.TextBox();
-            this.txtCodigoDaPeca = new System.Windows.Forms.TextBox();
             this.lblIdentificadorDoVendedor = new System.Windows.Forms.Label();
             this.lblCodigoDaPeca = new System.Windows.Forms.Label();
             this.lblPrecoUnitarioDaPeca = new System.Windows.Forms.Label();
             this.lblQuantidadeVendida = new System.Windows.Forms.Label();
+            this.txtCodigoDaPeca = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cmbComissionado
@@ -53,6 +53,7 @@
             this.cmbComissionado.Name = "cmbComissionado";
             this.cmbComissionado.Size = new System.Drawing.Size(298, 23);
             this.cmbComissionado.TabIndex = 0;
+            this.cmbComissionado.SelectedIndexChanged += new System.EventHandler(this.cmbComissionado_SelectedIndexChanged);
             // 
             // txtPrecoUnitarioDaPeca
             // 
@@ -67,14 +68,6 @@
             this.txtQuantidadevendida.Name = "txtQuantidadevendida";
             this.txtQuantidadevendida.Size = new System.Drawing.Size(298, 23);
             this.txtQuantidadevendida.TabIndex = 3;
-            // 
-            // txtCodigoDaPeca
-            // 
-            this.txtCodigoDaPeca.Location = new System.Drawing.Point(249, 70);
-            this.txtCodigoDaPeca.Name = "txtCodigoDaPeca";
-            this.txtCodigoDaPeca.Size = new System.Drawing.Size(298, 23);
-            this.txtCodigoDaPeca.TabIndex = 4;
-            this.txtCodigoDaPeca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblIdentificadorDoVendedor
             // 
@@ -112,16 +105,24 @@
             this.lblQuantidadeVendida.TabIndex = 8;
             this.lblQuantidadeVendida.Text = "Quantidade vendida";
             // 
+            // txtCodigoDaPeca
+            // 
+            this.txtCodigoDaPeca.Location = new System.Drawing.Point(249, 70);
+            this.txtCodigoDaPeca.Name = "txtCodigoDaPeca";
+            this.txtCodigoDaPeca.Size = new System.Drawing.Size(298, 23);
+            this.txtCodigoDaPeca.TabIndex = 9;
+            this.txtCodigoDaPeca.TextChanged += new System.EventHandler(this.txtCodigoDaPeca_TextChanged);
+            // 
             // frmComissionamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 338);
+            this.Controls.Add(this.txtCodigoDaPeca);
             this.Controls.Add(this.lblQuantidadeVendida);
             this.Controls.Add(this.lblPrecoUnitarioDaPeca);
             this.Controls.Add(this.lblCodigoDaPeca);
             this.Controls.Add(this.lblIdentificadorDoVendedor);
-            this.Controls.Add(this.txtCodigoDaPeca);
             this.Controls.Add(this.txtQuantidadevendida);
             this.Controls.Add(this.txtPrecoUnitarioDaPeca);
             this.Controls.Add(this.cmbComissionado);

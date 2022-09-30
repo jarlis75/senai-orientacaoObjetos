@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplicacaoPoo.Dominio.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,43 @@ namespace AplicacaoPoo.Estrutural.Windows
 {
     public partial class frmComissionamento : Form
     {
+       
+
         public frmComissionamento()
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void cmbComissionado_SelectedIndexChanged(object sender, EventArgs e)
         {
-          var txtCodigoDaPeca = textBox1.Text;  
+            var list = new List<string>();
+            list.Add(MoedaHelper.Dolar);
+            list.Add(MoedaHelper.Euro);
+            list.Add(MoedaHelper.Libra);
+            cmbComissionado.DataSource = list;
+            cmbComissionado.SelectedIndex = 0;
+
         }
+        private void txtCodigoDaPeca_TextChanged(object sender, EventArgs e)
+        {
+            var codigoDaPeca = txtCodigoDaPeca.Text;        
+
+        }
+
+
+
+        private void txtPrecoUnitarioDaPeca_TextChanged(object sender, EventArgs e)
+        {
+            var precoUnitarioDaPeca = txtPrecoUnitarioDaPeca.Text;  
+
+        }
+
+       
+        private void txtQuantidadevendida_TextChanged(object sender, EventArgs e)
+        {
+            var quantidadevendida = txtQuantidadevendida.Text;  
+
+        }
+
+       
     }
 }

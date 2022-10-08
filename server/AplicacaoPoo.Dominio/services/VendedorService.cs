@@ -24,7 +24,7 @@ namespace AplicacaoPoo.Dominio.services
             {
                 Nome = "Band"
             });
-
+            return lista;
         }
     }
 }

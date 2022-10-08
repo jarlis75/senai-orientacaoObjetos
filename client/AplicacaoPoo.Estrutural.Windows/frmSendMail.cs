@@ -1,14 +1,5 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AplicacaoPoo.Estrutural.Windows
 {
@@ -23,28 +14,44 @@ namespace AplicacaoPoo.Estrutural.Windows
 
         private void btnEnviarMensagem_Click(object sender, EventArgs e)
         {
-            var mensagem = new MimeMessage();
-            mensagem.From.Add(new MailBoxAddress(txtNomeCompleto.Text, txtEmail.Text));
-
-            mensagem.To.Add(new MailboxAddress("jarlis", "jharlis(@gmail.com"));
-
-            mensagem.Subject = txtAssunto.Text;
-
-            mensagem.Body = new TextPart("plain")
+            try
             {
-                Text = txtMensagem.Text
-            };
+                btnEnviarMensagem.Enabled = false;
+                var mensagem = new MimeMessage();
+                mensagem.From.Add(new MailboxAddress(txtNomeCompleto.Text, txtEmail.Text));
 
-            using (var cliet = new SmtpClient())
-            {
-                cliet.Connect("smtp.gmail.com", 587, false);
+                mensagem.To.Add(new MailboxAddress("jarlis", "jarlis.almeida@aluno.senai.br"));
+                mensagem.ReplyTo.Add(new MailboxAddress(txtNomeCompleto.Text, txtEmail.Text));
 
-                //Note ; 
-                cliet.Authenticate("jharlis9@gmail.com", "senha");
+                mensagem.Subject = txtAssunto.Text;
 
-                cliet.Send(mensagem);   
-                cliet.Disconnect(true);
+                mensagem.Body = new TextPart("plain")
+                {
+                    Text = txtMensagem.Text
+                };
+
+                using (var cliet = new SmtpClient())
+                {
+                    cliet.Connect("smtp.gmail.com", 587, false);
+
+                    //Note ; 
+                    cliet.Authenticate("user_senai_temp@faceli.edu.br", "senai@2022");
+
+                    cliet.Send(mensagem);
+                    cliet.Disconnect(true);
+
+                    btnEnviarMensagem.Enabled = true;
+                    MessageBox.Show("Mensagem enviada com socesso");
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+                throw;
+            }
+
+            
+
         }
     }
 }
